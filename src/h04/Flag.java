@@ -18,7 +18,6 @@ public class Flag extends Applet {
 
 
 
-
         Color c1 = new Color(230, 39, 30);
 
 

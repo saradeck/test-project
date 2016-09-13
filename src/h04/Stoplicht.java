@@ -1,7 +1,6 @@
 package h04;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.applet.*;
 
 public class Stoplicht extends Applet
@@ -14,7 +13,7 @@ public class Stoplicht extends Applet
         g.fillRect(220,250,10,300);
         g.setColor(Color.red);
         g.fillOval(200,100,50,50);
-        g.setColor(Color.yellow);;
+        g.setColor(Color.yellow);
         g.fillOval(200,150,50,50);
         g.setColor(Color.green);
         g.fillOval(200,200,50,50);

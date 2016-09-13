@@ -2,7 +2,7 @@ package h04;
 
 import java.awt.*;
 import java.applet.*;
-import javax.swing.*;
+
 
 public class Praktijk extends Applet {
 

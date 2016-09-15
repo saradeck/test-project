@@ -6,7 +6,8 @@ import java.awt.*;
 
 
 public class Praktijk extends Applet {
-    double a, b, c, d, uitkomst;
+    double a, b, c, d, e , f, finaleuitkomst;
+            int uitkomst1;
 
 
 
@@ -18,14 +19,20 @@ public class Praktijk extends Applet {
         b = 6.3;
         c = 6.9;
         d=3;
-        uitkomst = (a + b+ c) / d;
+        e=10;
+        f=2;
+        uitkomst1 = (int) ((a + b+ c) / d*e);
+        finaleuitkomst=(double) uitkomst1 / e;
+
+
 
 
 
     }
 
     public void paint(Graphics g) {
-        g.drawString("De uitkomst is: " + uitkomst, 20, 20);
+        g.drawString("De eerste stap is: " + uitkomst1, 20, 20);
+        g.drawString("het antwoord is: " + finaleuitkomst, 30, 40);
 
 
     }

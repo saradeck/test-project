@@ -1,7 +1,6 @@
 package h04;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.applet.*;
 
 public class Gewicht extends Applet {

@@ -28,20 +28,20 @@ public class Praktijk extends Applet {
         g.drawString("Afgeronde Rechthoek", 50, 360);
 
         //Gevulde Rechthoek met ovaal
-        g.setColor(Color.magenta);
+        g.setColor(Color.red);
         g.fillRect(50, 390, 360, 100);
         g.setColor(Color.black);
         g.drawOval(50, 390, 360, 100);
         g.drawString("Gevulde Rechthoek met ovaal", 50, 510);
 
         //Gevulde Ovaal
-        g.setColor(Color.magenta);
+        g.setColor(Color.red);
         g.fillOval(50, 520, 360, 100);
         g.setColor(Color.black);
         g.drawString("Gevulde Ovaal", 50, 640);
 
         //Taartpunt met ovaal eromheen
-        g.setColor(Color.magenta);
+        g.setColor(Color.red);
         g.fillArc(38, 686, 360, 50, 0, 45);
         g.setColor(Color.black);
         g.drawOval(50, 680, 360, 100);

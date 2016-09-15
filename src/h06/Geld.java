@@ -17,6 +17,7 @@ public class Geld extends Applet {
     }
 
     public void paint(Graphics g) {
-        g.drawString("De uitkomst is: " + uitkomst, 20, 20);
+        g.drawString("Jan, Ali, Jeannette en ik krijgen ieder: " + uitkomst, 20, 20);
+
     }
 }

@@ -1,62 +1,49 @@
 package h05;
 
 import java.awt.*;
-import java.awt.event.*;
-import java.applet.*;
+import java.applet.Applet;
 
 public class Opdracht2 extends Applet {
-    private int[] lengteRij = {80,100,40};
-    private double maximum = lengteRij[0];
-    private double minimum = lengteRij[0];
-    private Color kleur;
-    private Staafdiagram staafdiagram;
 
-    public void paint(Graphics g) {
-        staafdiagram = new Staafdiagram(lengteRij,30);
-        staafdiagram.drukaf(g,70,200);
-        g.setColor(Color.black);
-        g.drawString("Valerie     Jeroen     Hans", 40, 210);
-    }
+    int base;
+    int Valerie;
+    int Jeroen;
+    int Hans;
+    int lijnyas;
 
     public void init() {
-        for (int i = 1; i<lengteRij.length; i++) {
-            if(lengteRij[i]> maximum)
-                maximum = lengteRij[i];
-            kleur = Color.black;
-        }
-        for(int i =1; i<lengteRij.length;i++) {
-            if(lengteRij[i]<minimum)
-                minimum = lengteRij[i];
-            kleur = Color.black;
-        }
+        base = 200;
+        Valerie = 40;
+        Jeroen = 100;
+        Hans = 80;
+        lijnyas = 100;
     }
-    class Staafdiagram {
-        private int[] lengteRij;
-        private int witruimte;
 
-        public Staafdiagram( int[] lengteRij, int witruimte) {
-            this.lengteRij=lengteRij;
-            this.witruimte=witruimte;
-        }
-
-        public void drukaf(Graphics g, int x, int y) {
-            int xPos = x, yPos = y;
-
-            for (int i = 0; i<lengteRij.length; i++) {
-                g.setColor(Color.red);
-                g.fillRect(xPos,yPos-20-lengteRij[i],10,lengteRij[i]);
-                xPos += witruimte;
-            }
-            xPos=x;
-            for(int i=0; i< lengteRij.length;i++) {
-                String getalStr = ""+ lengteRij[i];
-                g.drawString(getalStr, xPos, yPos);
-                xPos += witruimte;
-            }
-        }
-        public void printMaxMin() {
-
-
-        }
+    public void paint(Graphics g){
+        super.paint(g);
+        int x = 200;
+        int y = base - Valerie;
+        int y2 = base - Jeroen;
+        int y3 = base - Hans;
+        setSize(600, 400);
+        g.setColor(Color.blue);
+        g.fillRect(x, y, 30, Valerie);
+        g.setColor(Color.red);
+        g.fillRect(x+50, y2, 30, Jeroen);
+        g.setColor(Color.yellow);
+        g.fillRect(x+100, y3, 30, Hans);
+        g.setColor(Color.black);
+        g.drawRect(x, y, 30, Valerie);
+        g.drawRect(x+50, y2, 30, Jeroen);
+        g.drawRect(x+100, y3, 30, Hans);
+        g.drawLine(310, base, base, base);
+        g.drawLine(base, 60, base, base);
+        g.drawString("100",175, 110);
+        g.drawString("80",175, 130);
+        g.drawString("60", 175, 150);
+        g.drawString("40",175, 170);
+        g.drawString("20",175, 190);
+        g.drawString("00",175, 210);
+        g.drawString("Valerie    Jeroen    Hans",200, 220);
     }
 }

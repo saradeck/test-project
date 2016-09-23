@@ -1,83 +1,86 @@
 package h08;
 
+import java.applet.Applet;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Openavond extends Frame  implements WindowListener, ActionListener {
-    TextField mannen;
-    TextField vrouwen;
-    TextField tsmannen;
-    TextField tsvrouwen;
+public class Openavond extends Applet {
+
     Button a;
     Button b;
     Button c;
     Button d;
-    private int numClicks = 0;
-
-    public static void main(String[] args) {
-        Openavond myWindow = new Openavond("Open avond ");
-        myWindow.setSize(350, 100);
-        myWindow.setVisible(true);
-    }
+    int f;
+    int j;
+    int h;
+    int i;
 
 
-
-    public Openavond(String title) {
-
-        super(title);
+    public void init(){
         setLayout(new FlowLayout());
-        addWindowListener(this);
+
         a = new Button("mannen");
-        b = new Button("vrouwen");
-        c = new Button("toekomstige mannelijke studenten");
-        d = new Button("toekomstige vrouwelijke studenten");
+        KnopListener kl = new KnopListener();
+        a.addActionListener( kl );
         add(a);
+
+        b = new Button("vrouwen");
+        KnopListener1 ht = new KnopListener1();
+        b.addActionListener( ht );
         add(b);
+
+        c = new Button("leerlingen mannen");
+        KnopListener2 rs = new KnopListener2();
+        c.addActionListener( rs );
         add(c);
+
+        d = new Button("leerlingen vrouwen");
+        KnopListener3 az = new KnopListener3();
+        d.addActionListener( az );
         add(d);
-        add(mannen);
-        add(vrouwen);
-        add(tsmannen);
-        add(tsvrouwen);
-        a.addActionListener(this);
-        b.addActionListener(this);
-        c.addActionListener(this);
-        d.addActionListener(this);
-        mannen = new TextField(30);
-        vrouwen = new TextField(40);
-        tsmannen = new TextField(50);
-        tsvrouwen = new TextField(60);
+
+        f = 0;
+        j = 0;
+        h = 0;
+        i = 0;
     }
 
-    public void actionPerformed(ActionEvent e) {
-        numClicks++;
-        mannen.setText("mannen " + numClicks + " ");
-        vrouwen.setText("vrouwen " + numClicks + " ");
-        tsmannen.setText("toekomstige mannelijke leerlingen " + numClicks + " ");
-        tsvrouwen.setText("toekomstige vrouweljke leerlingen" + numClicks + " ");
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.drawString("mannen : " + f, 100, 40);
+        g.drawString("vrouwen : " + j, 100, 55);
+        g.drawString("leerlingen mannen : " + h, 100, 70);
+        g.drawString("leelingen vrouwen : " + i, 100, 85);
     }
 
-    public void windowClosing(WindowEvent e) {
-        dispose();
-        System.exit(0);
+    class KnopListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            f = f +  1;
+            repaint();
+        }
     }
 
-    public void windowOpened(WindowEvent e) {
+    class KnopListener1 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            j = j + 1;
+            repaint();
+        }
     }
 
-    public void windowActivated(WindowEvent e) {
+    class KnopListener2 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            h = h + 1;
+            repaint();
+        }
     }
 
-    public void windowIconified(WindowEvent e) {
-    }
-
-    public void windowDeiconified(WindowEvent e) {
-    }
-
-    public void windowDeactivated(WindowEvent e) {
-    }
-
-    public void windowClosed(WindowEvent e) {
+    class KnopListener3 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            i = i + 1;
+            repaint();
+        }
     }
 
 }

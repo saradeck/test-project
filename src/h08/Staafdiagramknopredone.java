@@ -105,7 +105,7 @@ public class Staafdiagramknopredone extends Applet {
 
 
 
-    public void paint(Graphics g){
+        public void paint(Graphics g){
         g.setColor(Color.lightGray);
         g.drawLine(6,80,200,80);
         g.drawLine(6,110,200,110);

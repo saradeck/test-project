@@ -7,10 +7,10 @@ import java.awt.event.ActionListener;
 
 public class Openavond extends Applet {
 
-    Button a;
-    Button b;
-    Button c;
-    Button d;
+    Button knopA;
+    Button knopB;
+    Button knopC;
+    Button knopD;
     int f;
     int j;
     int h;
@@ -20,25 +20,25 @@ public class Openavond extends Applet {
     public void init() {
         setLayout(new FlowLayout());
 
-        a = new Button("mannen");
+        knopA = new Button("mannen");
         KnopListener kl = new KnopListener();
-        a.addActionListener(kl);
-        add(a);
+        knopA.addActionListener(kl);
+        add(knopA);
 
-        b = new Button("vrouwen");
+        knopB = new Button("vrouwen");
         KnopListener1 ht = new KnopListener1();
-        b.addActionListener(ht);
-        add(b);
+        knopB.addActionListener(ht);
+        add(knopB);
 
-        c = new Button("leerlingen mannen");
+        knopC = new Button("leerlingen mannen");
         KnopListener2 rs = new KnopListener2();
-        c.addActionListener(rs);
-        add(c);
+        knopC.addActionListener(rs);
+        add(knopC);
 
-        d = new Button("leerlingen vrouwen");
+        knopD= new Button("leerlingen vrouwen");
         KnopListener3 az = new KnopListener3();
-        d.addActionListener(az);
-        add(d);
+        knopD.addActionListener(az);
+        add(knopD);
 
         f = 0;
         j = 0;

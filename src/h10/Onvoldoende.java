@@ -2,70 +2,105 @@ package h10;
 
 
 
+
+
+import javafx.scene.control.*;
+
 import java.awt.*;
 import java.applet.*;
+import java.awt.Button;
+import java.awt.Label;
+import java.awt.TextField;
 import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class Onvoldoende extends Applet {
-    TextField tekstvak;
-    Label label;
-    String s, tekst;
-    int dag;
+public class Onvoldoende extends Applet{
 
+    TextField tekstveld;
+    Button knop;
+    double invoer;
+    double totaal;
+
+    double gemiddelde;
+    int aantalCijvers;
+    boolean geklikt;
+
+
+    @Override
     public void init() {
-        tekstvak = new TextField("", 20);
-        label = new Label("Type het dagnummer en druk op enter");
-        tekstvak.addActionListener( new TekstvakListener() );
-        tekst = "";
-        add(label);
-        add(tekstvak);
+        super.init();
+        tekstveld = new TextField("", 5);
+        add(tekstveld);
+
+        knop = new Button("Ok");
+        add(knop);
+        Knoplisterner kl = new Knoplisterner();
+        knop.addActionListener(kl);
+
     }
 
     public void paint(Graphics g) {
-        g.drawString(tekst, 50, 60 );
+        super.paint(g);
+        int x=50;
+        int y=80;
+        if(geklikt){
+
+
+        if ( invoer < 5.5){
+            g.drawString("het cijver is onvoldoende" , x, y);
+
+
+        }
+        else {
+
+            g.drawString("het cijver is voldoende" , x, y);
+        }
+
+
+
+
+        y=y +20;
+        g.drawString("gemiddelde"+ gemiddelde , x, y);
+}
+
     }
 
-    class TekstvakListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            s = tekstvak.getText();
-            dag = Integer.parseInt( s);
-            switch(dag) {
-                case 1:
-                    tekst = "slecht";
-                    break;
-                case 2:
-                    tekst = "slecht";
-                    break;
-                case 3:
-                    tekst = "slecht";
-                    break;
-                case 4:
-                    tekst = "onvoldoende";
-                    break;
-                case 5:
-                    tekst = "matig";
-                    break;
-                case 6:
-                    tekst = "voldoende";
-                    break;
-                case 7:
-                    tekst = "voldoende";
-                    break;
-                case 8:
-                    tekst = "goed";
-                    break;
-                case 9:
-                    tekst = "goed";
-                    break;
-                case 10:
-                    tekst = "goed";
-                    break;
-                default:
-                    tekst = "waarschuwing u heeft een verkeerd cijfer ingevoerd";
-                    break;
-            }
+
+
+    class Knoplisterner implements ActionListener{
+
+
+        public void actionPerformed(ActionEvent e){
+            String s = tekstveld.getText();
+            invoer = Double.parseDouble(s);
+
+            totaal=totaal+ invoer;
+            aantalCijvers++;
+
+            gemiddelde=+totaal/aantalCijvers;
+
+            geklikt= true;
+
+
+
+
             repaint();
+
+
         }
+
+
+
     }
+
+
+
+
+
+
+
+
 }
+

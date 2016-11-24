@@ -2,14 +2,14 @@ package h12;
 
 import java.awt.*;
 import java.applet.*;
-import java.util.Arrays;
+
 
 
 public class Opdracht12_2 extends Applet{
 
-        Button[] knop;
+        private Button[] knop;
 
-        @Override
+
         public void init() {
 
                 knop = new Button[25];

@@ -10,23 +10,23 @@ import java.awt.event.ActionListener;
 
 public class Opdracht12_5 extends Applet{
 
-    int[] getallen = {55, 44, 58, 102, 23, 27, 31, 52, 17};
+    private int[] getallen = {55, 44, 58, 102, 23, 27, 31, 52, 17};
     TextField textField;
-    Button button;
-    String schermTekst;
+    Button knop;
+    String Tekst;
 
     public void init(){
         textField = new TextField("", 8);
         add(textField);
-        button = new Button("Kies");
-        button.addActionListener(new KnopListener());
-        add(button);
-        schermTekst = "";
+        knop = new Button("ok");
+        knop.addActionListener(new KnopListener());
+        add(knop);
+        Tekst = "";
     }
     public void paint(Graphics g){
         int x = 50;
         int y = 80;
-        g.drawString(schermTekst, x, y);
+        g.drawString(Tekst, x, y);
     }
     class KnopListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
@@ -40,9 +40,9 @@ public class Opdracht12_5 extends Applet{
                 }
             }
             if (isGevonden) {
-                schermTekst = "Is gevonden, Index is " + index;
+                Tekst = "Is gevonden " + index;
             } else {
-                schermTekst = "Is niet gevonden";
+                Tekst = "Is niet gevonden";
             }
             repaint();
         }

@@ -3,30 +3,25 @@ package h12;
 import java.awt.*;
 import java.applet.*;
 
-/**
- * Created by Gebruiker on 29-10-2016.
- * Af
- */
+
+
 public class Opdracht12_4 extends Applet{
 
-    boolean gevonden;
-    double[] salaris = { 1.0, 5.5, 10.2, 12.5, 15.6 };
-    double gezocht;
+    private boolean eindstop;
+    private double[] zoektocht = { 1.0, 5.5, 10.2, 12.5, 15.6 };
 
     public void init() {
-        gezocht = 12.5;
-        gevonden = false;
+        double begin = 12.5;
+        eindstop = false;
         int teller = 0;
-        while(teller < salaris.length) {
-            if(salaris[teller] == gezocht) {
-                gevonden = true;
-            }
+        while(teller < zoektocht.length) {
+            if(zoektocht[teller] == begin) eindstop = true;
             teller ++;
         }
     }
 
     public void paint(Graphics g) {
-        if(gevonden == true) {
+        if(eindstop) {
             g.drawString("De waarde is gevonden.", 20, 50);
         }
         else {

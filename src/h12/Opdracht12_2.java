@@ -12,7 +12,7 @@ public class Opdracht12_2 extends Applet{
 
         public void init() {
 
-                knop = new Button[25];
+                knop = new Button[26];
                 for (int i = 0; i < knop.length; i++) {
                         knop[i] = new Button("" + i);
                         add(knop[i]);

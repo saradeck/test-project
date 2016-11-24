@@ -8,21 +8,23 @@ package h12;
 
 public class Opdracht12_1 extends Applet{
 
-    double salaris[], totaalsalaris, gemiddelde;
+    private double[] tafel;
+    private double totaal;
+    private double gemiddelde;
 
 
     public void init() {
-        salaris = new double [10];
+        tafel= new double [10];
 
-        for (int teller = 0; teller < salaris.length; teller ++) {
-            salaris[teller] = 50 * teller + 50;
-            totaalsalaris += salaris[teller];
+        for (int teller = 0; teller < tafel.length; teller ++) {
+            tafel[teller] = 90 * teller + 40;
+            totaal += tafel[teller];
         }
     }
 
     public void paint(Graphics g) {
-        gemiddelde = totaalsalaris / salaris.length;
-        g.drawString("Gemiddelde = " + gemiddelde, 50, 30);
+        gemiddelde = totaal / tafel.length;
+        g.drawString("Gemiddelde = " + gemiddelde, 40, 20);
 
     }
 }

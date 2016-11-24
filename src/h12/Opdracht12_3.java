@@ -6,21 +6,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 
-/**
- * Created by Gebruiker on 29-10-2016.
- * Af
- */
+
 public class Opdracht12_3 extends Applet {
 
     TextField[] tekstvak;
-    int[] getallen;
+    int[] weetgeenaam;
     Button knop;
 
-    @Override
+
     public void init() {
 
         tekstvak = new TextField[5];
-        getallen = new int[5];
+        weetgeenaam = new int[5];
 
         for (int i = 0; i < tekstvak.length; i++) {
             tekstvak[i] = new TextField("", 5);
@@ -40,13 +37,13 @@ public class Opdracht12_3 extends Applet {
 
             for (int i = 0; i < tekstvak.length; i++) {
                 String invoer = tekstvak[i].getText();
-                getallen[i] = Integer.parseInt(invoer);
+                weetgeenaam[i] = Integer.parseInt(invoer);
             }
 
-            Arrays.sort(getallen);
+            Arrays.sort(weetgeenaam);
 
-            for (int i = 0; i < getallen.length; i++) {
-                tekstvak[i].setText(String.valueOf(getallen[i]));
+            for (int i = 0; i < weetgeenaam.length; i++) {
+                tekstvak[i].setText(String.valueOf(weetgeenaam[i]));
             }
 
         }

@@ -25,7 +25,7 @@ public class Bomen extends Applet {
     public void paint(Graphics g) {
         for (int teller = 0; teller < 10; teller++) {
             x += 100;
-            
+
 
 
             tekenboom(g,x,120,x - 20,60);

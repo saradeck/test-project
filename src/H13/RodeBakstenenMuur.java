@@ -28,7 +28,7 @@ public class RodeBakstenenMuur extends Applet {
     public void paint(Graphics g) {
         int x = 25;
         int y = 25;
-        breedtesteen = 20;
+        breedtesteen = 40;
         hoogtesteen = 15;
         AantalSteenHor = 20;
         AantalSteenver = 20;

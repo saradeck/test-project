@@ -61,7 +61,7 @@ public class TweeMuren extends Applet {
 
     class BaksteenLuisteraar implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            breedtesteen = 20;
+            breedtesteen = 40;
             hoogtesteen = 15;
             AantalSteenHoogte = 25;
             AantalSteenbreedte = 20;
@@ -73,7 +73,7 @@ public class TweeMuren extends Applet {
     }
     class BetonblokLuisteraar implements ActionListener{
         public void actionPerformed(ActionEvent e) {
-            breedtesteen = 40;
+            breedtesteen = 80;
             hoogtesteen = 30;
             AantalSteenHoogte = 15;
             AantalSteenbreedte = 10;

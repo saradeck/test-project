@@ -18,6 +18,7 @@ public class Cirkel100 extends Applet{
             y+=6;
             g.drawOval(160+x, 160+x, 5+y, 5+y);
             teller++;
+
         }
     }
 }

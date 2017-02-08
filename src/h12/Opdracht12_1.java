@@ -19,6 +19,7 @@ public class Opdracht12_1 extends Applet{
         for (int teller = 0; teller < tafel.length; teller ++) {
             tafel[teller] = 90 * teller + 40;
             totaal += tafel[teller];
+
         }
     }
 

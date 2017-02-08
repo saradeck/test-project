@@ -26,7 +26,7 @@ public class Opdracht2 extends Applet {
         int y2 = base - Jeroen;
         int y3 = base - Hans;
         setSize(600, 400);
-        g.setColor(Color.blue);
+        g.setColor(Color.orange);
         g.fillRect(x, y, 30, Valerie);
         g.setColor(Color.red);
         g.fillRect(x+50, y2, 30, Jeroen);

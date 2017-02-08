@@ -4,7 +4,7 @@ package h14;
  * Created by simon on 5-2-2017.
  */
 
-
+// FIXME: 8-2-2017
         import java.applet.*;
         import java.awt.*;
         import java.awt.event.*;
@@ -48,11 +48,11 @@ public class SmileyGame extends Applet {
         public void actionPerformed(ActionEvent e) {
 
             spel = 23;
-            lose = false;
-            win = false;
             game = true;
             winst = false;
             test = true;
+            lose = false;
+            win = false;
             repaint();
         }
     }
@@ -65,9 +65,7 @@ public class SmileyGame extends Applet {
     }
 
     public void updateSpel() {
-
         int invoer = 0;
-
         if (test) {
             invoer = Integer.valueOf(nummer.getText());
         }   nummer.setText("");
